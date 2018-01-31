@@ -1,4 +1,4 @@
-package com.xfinity.network;
+package com.xfinity;
 
 import android.app.Application;
 import android.text.TextUtils;

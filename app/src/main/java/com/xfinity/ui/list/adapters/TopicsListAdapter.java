@@ -1,4 +1,4 @@
-package com.xfinity.adapters;
+package com.xfinity.ui.list.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.xfinity.R;
 import com.xfinity.model.RelatedTopicsItem;
+import com.xfinity.model.Topic;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class TopicsListAdapter extends RecyclerView.Adapter<TopicsListAdapter.Cu
 
     //Custom interface to pass data between the fragments.
     public interface TopicsClickListener{
-        void onTopicItemListener(String title,String description,String image);
+        void onTopicItemListener(Topic topic);
     }
 
     public TopicsListAdapter(Context context, List<RelatedTopicsItem> relatedTopicsItemList) {
@@ -54,7 +55,10 @@ public class TopicsListAdapter extends RecyclerView.Adapter<TopicsListAdapter.Cu
                     String[] titleText=relatedTopicsItem.getText().split("-");
                     title=titleText[0];
                     description=titleText[1];
-                    mTopicsClickListener.onTopicItemListener(title,description,relatedTopicsItem.getIcon().getURL());
+                    Topic topic = new Topic(title,description,relatedTopicsItem.getIcon().getURL());
+                    //mTopicsClickListener.onTopicItemListener(title,description,relatedTopicsItem.getIcon().getURL());
+                    mTopicsClickListener.onTopicItemListener(topic);
+
                 }
             });
         }

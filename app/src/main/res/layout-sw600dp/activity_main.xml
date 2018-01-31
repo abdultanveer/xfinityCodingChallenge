@@ -17,14 +17,14 @@
 
     <fragment
         android:id="@+id/fragment_list"
-        class="com.xfinity.view.TopicsListFragment"
+        class="com.xfinity.ui.list.TopicsListFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         tools:layout="@layout/list_fragment" />
     <fragment
         android:id="@+id/fragment_detail"
-        class="com.xfinity.view.DetailsFragment"
+        class="com.xfinity.ui.details.DetailsFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
